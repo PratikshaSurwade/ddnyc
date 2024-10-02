@@ -1,0 +1,247 @@
+*{
+    background-color: #eeeeee;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html ,body{
+    height: 100%;
+    width: 100%;
+    font-family: Arial,sans-serif;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav>img{
+    width: 8rem;
+}
+nav>div>span{
+    padding: 0.5rem;
+    position: relative;
+}
+
+.navMidleItems,.navLeftItems {
+    display: flex;
+    gap:4rem;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.navLeftItems>span:nth-child(2){
+    background-color:#F35422;
+    border-radius: 1rem;
+    color: #fff;
+}
+
+/* Initially hide the ul with opacity and height */
+.navMidleItems>span>ul {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.6s ease, max-height 0.6s ease;
+    position: absolute;
+    list-style-type: none;
+    padding: 0;
+    width: 6rem;
+    background-color: #fff;
+}
+
+/* Show the ul smoothly on hover */
+.navMidleItems>span:hover ul {
+    opacity: 1;
+    max-height: 200px; /* Adjust as needed based on content height */
+}
+
+/* Rotate the arrow on hover */
+.navMidleItems>span:hover .NavArrow {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.NavArrow {
+    transition: transform 0.3s ease;
+}
+
+.navMidleItems>span {
+    margin-right: 1.5rem;
+    position: relative;
+}
+
+.page1{
+    height: 100vh;
+    position: relative;
+    margin-left: 4rem;
+}
+
+.mainHeader{
+    position: relative;
+    top: 25%;
+    font-size: 3.2rem;
+}
+.mainHeader>p{
+    margin: 0;
+    padding: 0;
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: -5px;
+    line-height: 5rem;
+    background: transparent;
+    position: relative; /* Required for z-index to work */
+}
+
+.mainHeader>p:first-child {
+    z-index: 4; /* Brings this line in front of the SVG */
+}
+
+/* Second line */
+.mainHeader>p:last-child {
+    z-index: 1; /* Moves this line behind the SVG */
+}
+
+/* SVG */
+.headerSvgItem {
+    position: absolute;
+    top: -5%;
+    pointer-events: none;
+    left: 60%;
+    z-index: 2; /* Controls the layering of the SVG */
+}
+
+.headerReviews{
+    position: absolute;
+    top: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.headerReviews>div{
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.headerReviews>div>p{
+    color: #728085;
+}
+.clutch{
+    width: 6rem;
+    height: 2rem;
+}
+
+.fa-star{
+    color: #F35422;
+}
+
+.newProjectBtn{
+    background-color: #000;
+    color: #fff;
+    padding: 1.3rem;
+    position: absolute;
+    font-size: 1.1rem;
+    border-radius: 3rem;
+    top: 80%;
+    right: 5%;
+}
+
+.page2,.page3{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+/* Slider */
+.slider-container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+  }
+  
+  .slider {
+    position: relative;
+  }
+  
+  .slides {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .slide {
+    min-width: 100%;
+    transition: transform 1s ease-in-out;
+    opacity: 0;
+  }
+  
+  .slide.active {
+    opacity: 1;
+  }
+  
+  .slide img {
+    width: 100%;
+    display: block;
+  }
+  
+  .caption {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .slider-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .prev, .next {
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .pager {
+    margin: 0 20px;
+    font-size: 1.2rem;
+  }
+  
+  .slider-line {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .line-segment {
+    width: 100px;
+    height: 2px;
+    background-color: #ddd;
+    margin: 0;
+  }
+  
+  .line-segment.active {
+    background-color: #333;
+    font-weight: bold;
+  }
+
+.page3 {
+    height: 100vh;  /* Full viewport height */
+    display: flex;
+    justify-content: center;  /* Horizontally centers the content */
+    align-items: center;  /* Vertically centers the content */
+    text-align: center;  /* Centers the text inside the h2 */
+}
+
+.page3 h2 {
+    margin: 0;  /* Remove any default margin */
+    padding: 20px;  /* Optional padding for some space around the text */
+    text-align: justify;
+    font-size: 2rem;
+    line-height: 3rem;
+}
