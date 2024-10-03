@@ -8,15 +8,19 @@
 	<meta name="description" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="index.css" />
-	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 	<!-- Font Awesome Link -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+	<!-- Swiper js Slider -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	
 </head>
 
 <body>
 	<div class="main">
-
-		<nav>
+		<nav class="nav">
 			<img src="./logo.png" />
 			<div class="navMidleItems">
 				<span>Work</span>
@@ -55,7 +59,6 @@
 					</svg>
 				</span>
 				<p>located in the heart of NYC.</p>
-
 			</div>
 
 			<div class="headerReviews">
@@ -69,8 +72,9 @@
 							d="M17.261 18.721c-1.521 1.565-3.587 2.413-5.761 2.413-4.456 0-7.696-3.5-7.696-8.304 0-4.826 3.24-8.326 7.696-8.326 2.153 0 4.196.847 5.74 2.391l.608.609 2.674-2.674-.587-.609C17.718 1.938 14.718.7 11.5.7 4.935.7 0 5.917 0 12.851 0 19.764 4.957 24.96 11.5 24.96c3.24 0 6.24-1.26 8.457-3.543l.587-.609-2.652-2.717z" />
 					</svg>
 				</div>
-				<div style="margin-left: 1rem;">
-					<p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+				<div style="margin-left: 1rem">
+					<p>
+						<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
 							class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
 							class="fa-solid fa-star"></i>
 					</p>
@@ -79,63 +83,117 @@
 			</div>
 			<button class="newProjectBtn">New Project?</button>
 		</div>
-		<hr>
+		<hr />
 		<div class="page2">
 			<!-- Slider -->
 			<div class="slider-container">
+				<!-- Slider images and captions -->
 				<div class="slider">
-				  <div class="slides">
 					<div class="slide active">
-					  <img src="https://dd.nyc/wp-content/uploads/2023/12/Hawkridge2-1-896x587.jpg" alt="Image 1">
-					  <p class="caption">SPJ Properties Web Design</p>
+						<img src="https://dd.nyc/wp-content/uploads/2024/05/dd_nyc_bas_800_x_423.webp" alt="Slide 1">
+						<p class="caption">This is Slide 1</p>
 					</div>
 					<div class="slide">
-					  <img src="https://dd.nyc/wp-content/uploads/2023/07/Start-Slider.webp" alt="Image 2">
-					  <p class="caption">Hawcridge Real Estate Design</p>
+						<img src="https://dd.nyc/wp-content/uploads/2023/12/DD.NYC%C2%AE-Akemi-Cosmetics-Manufacturing-1.webp" alt="Slide 2">
+						<p class="caption">This is Slide 2</p>
 					</div>
 					<div class="slide">
-					  <img src="https://dd.nyc/wp-content/uploads/2023/12/Hawkridge2-1-896x587.jpg" alt="Image 3">
-					  <p class="caption">Caption for Image 3</p>
+						<img src="https://dd.nyc/wp-content/uploads/2024/05/dd_nyc_bas_800_x_423.webp" alt="Slide 3">
+						<p class="caption">This is Slide 3</p>
 					</div>
 					<div class="slide">
-					  <img src="https://dd.nyc/wp-content/uploads/2023/07/Start-Slider.webp" alt="Image 4">
-					  <p class="caption">Caption for Image 4</p>
+						<img src="https://dd.nyc/wp-content/uploads/2023/12/DD.NYC%C2%AE-Akemi-Cosmetics-Manufacturing-1.webp" alt="Slide 4">
+						<p class="caption">This is Slide 4</p>
 					</div>
-				  </div>
-				  <div class="slider-line">
-					<span class="line-segment active"></span>
-					<span class="line-segment"></span>
-					<span class="line-segment"></span>
-					<span class="line-segment"></span>
-				  </div>
-
 				</div>
-			
-				<div class="slider-nav">
-				  <button class="prev" onclick="prevSlide()"><i class="fa-solid fa-angle-left"></i></button>
-				  <span class="pager"><span class="current-slide">1</span> / 4</span>
-				  <button class="next" onclick="nextSlide()"><i class="fa-solid fa-angle-right"></i></button>
+		
+				<!-- Page number -->
+				<div class="pagination-numbers">
+					<span class="current-slide">01</span>/<span class="total-slides">04</span>
 				</div>
-			
-				
-			  </div>
+		
+				<!-- Custom pagination line -->
+				<div class="pagination-line">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+		
+				<!-- Navigation arrows -->
+				<div class="arrows">
+					<button id="prev">‹</button>
+					<button id="next">›</button>
+				</div>
+			</div>
 		</div>
-		<hr>
+		<hr />
 		<div class="page3">
-			<h2>DD.NYC® is an award-winning digital<br> design agency focusing on branding, <br>web design, and CPG product packaging in<br> the heart of NYC. We design creative brands,<br> websites, and product packages that deliver results. 
+			<h2>
+				DD.NYC® is an award-winning digital<br />
+				design agency focusing on branding, <br />web design, and CPG product
+				packaging in<br />
+				the heart of NYC. We design creative brands,<br />
+				websites, and product packages that deliver results.
 			</h2>
 		</div>
-
 		<div class="page4">
-			<div>
-				<div>250+</div>
-				<div></div>
-				<div>successful digital design agency projects - Brand Identity, Website Design, Product Packaging
+			<div class="contentBox">
+				<h4>250+</h4>
+				<h5>
+					successful digital design agency projects - Brand Identity, Website
+					Design, Product Packaging
+				</h5>
+			</div>
+			<div class="contentBox">
+				<h4>9</h4>
+				<h5>
+					years in business improving digital design products for our
+					customers
+				</h5>
+			</div>
+			<div class="contentBox">
+				<h4>9.8</h4>
+				<h5>average NPS* we receive from our clients</h5>
+			</div>
+		</div>
+		<div class="page5">
+			<h5 class="headingName">DD.NYC® Recognition
+			</h5>
+			<div class="ddnycRecognition">
+				<div class="singleReco">
+					<p class="recoTitle">2024 Dieline 1st Place Award
+					</p>
+					<p class="recoName">Award</p>
+				</div>
+				<div class="singleReco">
+					<p class="recoTitle">Top 32 Web Development Agencies
+					</p>
+					<p class="recoName">Recognition</p>
+				</div>
+				<div class="singleReco">
+					<p class="recoTitle">2024 Dieline 1st Place Award
+					</p>
+					<p class="recoName">Award</p>
+				</div>
+				<div class="singleReco">
+					<p class="recoTitle">Top 32 Web Development Agencies
+					</p>
+					<p class="recoName">Recognition</p>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
+	<!-- Gsap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+		integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+		integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!-- Slick Slider -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	
 	<script src="index.js" async defer></script>
 </body>
 

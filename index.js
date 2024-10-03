@@ -1,58 +1,65 @@
+gsap.to(".nav",{
+	borderBottom: "grey solid 1px",
+	duration:0.5,
+	scrollTrigger:{
+		trigger:"nav",
+		scroller:"body",
+		start: "top -5%",
+		end: "top -11%",
+		markers:true,
+		scrub: 1,
+	}
+})
+
+
+
+// Get all the elements For Slider
 const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.pagination-dot');
-const lineSegments = document.querySelectorAll('.line-segment');
-const currentSlideText = document.querySelector('.current-slide');
+const paginationNumbers = document.querySelector('.pagination-numbers');
+const currentSlideNumber = document.querySelector('.current-slide');
+const totalSlides = document.querySelector('.total-slides');
+const lines = document.querySelectorAll('.line');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
 
 let currentIndex = 0;
-let totalSlides = slides.length;
-let slideInterval = setInterval(nextSlide, 4000); // Auto slide every 4 seconds
+const slideCount = slides.length;
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove('active');
-    if (i === index) {
-      slide.classList.add('active');
-    }
-  });
+// Set total number of slides
+totalSlides.textContent = `0${slideCount}`;
 
-  dots.forEach((dot, i) => {
-    dot.classList.remove('active');
-    if (i === index) {
-      dot.classList.add('active');
-    }
-  });
+// Function to update the slider
+function updateSlider() {
+    // Hide all slides
+    slides.forEach(slide => slide.classList.remove('active'));
+    lines.forEach(line => line.classList.remove('active'));
 
-  lineSegments.forEach((segment, i) => {
-    segment.classList.remove('active');
-    if (i === index) {
-      segment.classList.add('active');
-    }
-  });
+    // Show the current slide
+    slides[currentIndex].classList.add('active');
+    lines[currentIndex].classList.add('active');
 
-  currentSlideText.textContent = index + 1;
+    // Update the pagination numbers
+    currentSlideNumber.textContent = `0${currentIndex + 1}`;
 }
 
+// Function to go to the next slide
 function nextSlide() {
-  currentIndex = (currentIndex + 1) % totalSlides;
-  showSlide(currentIndex);
+    currentIndex = (currentIndex + 1) % slideCount;
+    updateSlider();
 }
 
+// Function to go to the previous slide
 function prevSlide() {
-  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-  showSlide(currentIndex);
+    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+    updateSlider();
 }
 
-// Event listeners for manual navigation
-dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => {
-    currentIndex = index;
-    showSlide(currentIndex);
-    resetInterval();
-  });
-});
+// Add event listeners for the arrows
+nextButton.addEventListener('click', nextSlide);
+prevButton.addEventListener('click', prevSlide);
 
-// Reset auto-slide timer on manual navigation
-function resetInterval() {
-  clearInterval(slideInterval);
-  slideInterval = setInterval(nextSlide, 4000);
-}
+// Auto-slide every 4 seconds
+setInterval(nextSlide, 4000);
+
+// Initialize slider
+updateSlider();
