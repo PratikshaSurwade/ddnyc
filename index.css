@@ -299,17 +299,23 @@ body {
   display: flex;
   justify-content: space-between;
   height: 2rem;
+  position: relative;
 }
 
+.singleReco::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  height: 4px;
+  background-color: #000;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.8s ease;
+}
 
-.singleReco::after{
-	content: "";
-	position: absolute;
-	bottom: -2px;
-	height: 4px;
-	background-color: #000;
-	width: 100%;
-	transform: scaleX(0);
-	transform-origin: right;
-	transition: transform .5s ease-in-out;
+.singleReco:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.8s ease;
 }

@@ -10,7 +10,12 @@ gsap.to(".nav",{
 		scrub: 1,
 	}
 })
-
+document.querySelectorAll('.singleReco').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      this.classList.add('active');  // Add 'active' class on hover
+    });
+  });
+  
 
 
 // Get all the elements For Slider
