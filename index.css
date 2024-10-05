@@ -16,6 +16,7 @@ body {
 .nav {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   z-index: 100;
   height: 5rem;
   position: fixed;
@@ -295,11 +296,14 @@ body {
 .ddnycRecognition{
   margin: 5rem 2rem;
 }
-.singleReco{
+
+.singleReco {
   display: flex;
   justify-content: space-between;
-  height: 2rem;
+  height: 4rem;
   position: relative;
+  cursor: pointer;
+  border-bottom: solid 2px lightgray;
 }
 
 .singleReco::after {
@@ -311,11 +315,29 @@ body {
   width: 100%;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.8s ease;
+  transition: transform 4s ease;
 }
 
 .singleReco:hover::after {
   transform: scaleX(1);
   transform-origin: left;
-  transition: transform 0.8s ease;
+  transition: transform 0.5s ease;
+}
+
+.singleReco:hover:before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  height: 4px;
+  background-color: #000;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.5s ease;
+}
+
+.singleReco:not(:hover):before {
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 0.5s ease;
 }
