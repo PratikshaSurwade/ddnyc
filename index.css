@@ -246,6 +246,8 @@ i.fa-star {
 .slide {
   display: none;
   text-align: center;
+  transform-origin:left;
+
 }
 
 .slide.active {
@@ -256,15 +258,14 @@ i.fa-star {
   width: 100%;
   height: 60vh;
   opacity: 1;
-  transition: all 0s .5s;
-  clip-path: inset(0 100% 0 0)
-
+  transition: all 0.5s .5s;
 }
 .slide.active>img{
   opacity: 1;
   transition-delay: 0s;
   clip-path: inset(0 0 0 0);
-  transition-duration: .5s
+  transition-duration: .5s;
+  transform-origin: left;
 }
 
 .caption {
@@ -275,6 +276,8 @@ i.fa-star {
   bottom: 3rem;
   right: -10rem;
   transition: transform 0.5s ease-in-out;
+  transform-origin: right;
+
 }
 
 .slide .outgoing {
@@ -403,13 +406,20 @@ i.fa-star {
   margin: 5rem 2rem;
 }
 
-.singleReco {
+/* .singleReco {
   display: flex;
   justify-content: space-between;
   height: 4rem;
   position: relative;
   cursor: pointer;
   border-bottom: solid 2px lightgray;
+} */
+
+.singleReco {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  position: relative;
 }
 
 .singleReco::after {
@@ -421,7 +431,7 @@ i.fa-star {
   width: 100%;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 4s ease;
+  transition: transform 1.5s ease;
 }
 
 .singleReco:hover::after {
@@ -439,13 +449,13 @@ i.fa-star {
   width: 100%;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 1s ease;
+  transition: transform 1.5s ease;
 }
 
 .singleReco:not(:hover):before {
   transform: scaleX(1);
   transform-origin: right;
-  transition: transform 1s ease;
+  transition: transform 0.5s ease;
 }
 /*  */
 
@@ -460,40 +470,32 @@ i.fa-star {
   justify-content: space-between;
   height: 70vh;
   margin: 3rem auto;
-  background-color: black;
   color: white;
   border-radius: 1rem;
   position: relative;
 }
-
 .descripTion{
   margin-left: 5rem;
 }
-
 .headingDName{
   color:grey;
-  border-left: solid grey 6px;
+  border-left: solid lightgray 6px;
   padding-left: 1rem;    
   font-weight: 700;
   font-size: xxx-large;
 }
-
 .activeDecription{
-  border-left: solid orangered 6px;
-  color: #b41212;
+  border-left: solid #000 6px;
+  color: #000;
 }
-
-.headingDescription{
-  color: #dd8811;
-  margin-top: 2rem;
+.headingDescription {
+  color: #000;
+  position: relative;
+  transform-origin: left;
+  opacity: 1;
+  transition: clip-path ease; /* Smooth transition for clip-path */
 }
-
-.headingImage{
-  width: 150vw;
-  height: 70vh;
-  border-radius: 1rem;
-  background-image: url(https://assets-global.website-files.com/64d3dd9edfb41666c35b15b7/64d3dd9edfb41666c35b15e1_Project-p-1080.jpg);
-  background-size: cover;
-  background-position: center;
-  transition: background-image 0.3s;
+.headingDescription.activeDecription {
+  clip-path: inset(0 100% 0 0); /* Start fully clipped from right */
+  transition: clip-path  ease; /* Smooth transition for clip-path */
 }
