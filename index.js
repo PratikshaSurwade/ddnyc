@@ -12,6 +12,30 @@ gsap.to(".nav", {
 	},
 });
 
+// Landing page animation
+// GSAP animation sequence for landing page elements
+gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } })
+  // SVG Heart icon animation (appears from x: -20px to original position)
+  .from(".heart", { x: -40, opacity: 0 })
+  
+  // Main header first line animation (fades in after SVG icon)
+  .from(".mainHeader_firstLine", { opacity: 0, y: 20 }, "<0.5")
+  
+  // Main header second line animation (fades in after first line)
+  .from(".mainHeader_secondLine", { opacity: 0, y: 20 }, "<0.5")
+  
+  // Move SVG icon back to its original position (finishes after second line appears)
+  .to(".heart", { x: 0, duration: 0.5 }, "<0.5")
+  
+  // Navigation bar appears from top (y: -20px to original position)
+  .fromTo(".nav", { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, "-=0.5")
+  
+  // Header reviews section appears from left (x: -20px to original position)
+  .from(".headerReviews", { x: -20, opacity: 0 }, "-=0.5")
+  
+  // New Project button appears from the right (x: 20px to original position)
+  .from(".newProjectBtn", { x: 20, opacity: 0 }, "<");
+
 // page Statistics timeline
 
 // Create the timeline
@@ -117,13 +141,13 @@ function updateSlider() {
 	// Apply GSAP animation
 	gsap.fromTo(
 		slideActiveImg,
-		{ scaleX: 0, clipPath: "inset(0 100% 0 0)" }, // Start from slightly left
-		{ scaleX: 1, duration: 0.5, ease: "power2.out", clipPath: "inset(0 0 0 0)" } // Transition to center smoothly
+		{ clipPath: "inset(0 100% 0 0)" }, // Start from slightly left
+		{ duration: 0.5, ease: "power2.out", clipPath: "inset(0 0 0 0)" } // Transition to center smoothly
 	);
 	gsap.fromTo(
 	  captionLine,
-	  { scaleX: 0, clipPath: "inset(0 100% 0 0)" }, // Start from slightly left
-	  { scaleX: 1, duration: 0.5, ease: "power2.out", clipPath: "inset(0 0 0 0)" } // Transition to center smoothly
+	  { clipPath: "inset(0 100% 0 0)" }, // Start from slightly left
+	  { duration: 0.5, ease: "power2.out", clipPath: "inset(0 0 0 0)" } // Transition to center smoothly
   );
 }
 
