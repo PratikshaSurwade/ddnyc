@@ -1,16 +1,25 @@
-gsap.to(".nav", {
-	backgroundColor: "#000",
-	color: "#fff",
-	duration: 0.1,
-	scrollTrigger: {
-		trigger: "nav",
-		scroller: "body",
-		start: "top -3%",
-		end: "top -7%",
-		// markers:true,
-		scrub: 0.1,
-	},
+const menuIcon = document.getElementById("menu-icon");
+const navLinks = document.querySelector(".nav-links");
+
+menuIcon.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+	document.body.classList.toggle("menu-active");
 });
+
+
+// gsap.to(".nav", {
+// 	backgroundColor: "#000",
+// 	color: "#fff",
+// 	duration: 0.1,
+// 	scrollTrigger: {
+// 		trigger: "nav",
+// 		scroller: "body",
+// 		start: "top -3%",
+// 		end: "top -7%",
+// 		// markers:true,
+// 		scrub: 0.1,
+// 	},
+// });
 
 // Landing page animation
 // GSAP animation sequence for landing page elements
@@ -43,8 +52,8 @@ const tl1 = gsap.timeline({
 	scrollTrigger: {
 		trigger: ".contentBox",
 		scroller: "body",
-		start: "top 60%",
-		end: "top 30%",
+		start: "top 50%",
+		end: "top 20%",
 		scrub: true, // Smooth out the animation with scrub
 		// markers: true,
 	},
@@ -66,20 +75,6 @@ tl1.from(".contentBox > h4, .contentBox > h5", {
 	stagger: 0.4, // Adjust stagger for smoother effect
 });
 
-// const tl2 = gsap.timeline();
-
-// tl2.from(".headingDescription",{
-//   opacity: 0,
-//   y: 50, // Reduced y to avoid large jump
-//   duration: 0.8,
-// })
-// tl2.from(".headingImage",{
-//   opacity: 0,
-//   y: -50, // Reduced y to avoid large jump
-//   duration: 0.8,
-// })
-
-//
 
 document.querySelectorAll(".singleReco").forEach((item) => {
 	item.addEventListener("mouseenter", function () {
