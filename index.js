@@ -1,25 +1,24 @@
-const menuIcon = document.getElementById("menu-icon");
-const navLinks = document.querySelector(".nav-links");
+// const menuIcon = document.getElementById("menu-icon");
+// const navLinks = document.querySelector(".nav-links");
 
-menuIcon.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-	document.body.classList.toggle("menu-active");
-});
-
-
-// gsap.to(".nav", {
-// 	backgroundColor: "#000",
-// 	color: "#fff",
-// 	duration: 0.1,
-// 	scrollTrigger: {
-// 		trigger: "nav",
-// 		scroller: "body",
-// 		start: "top -3%",
-// 		end: "top -7%",
-// 		// markers:true,
-// 		scrub: 0.1,
-// 	},
+// menuIcon.addEventListener("click", () => {
+//     navLinks.classList.toggle("active");
+// 	document.body.classList.toggle("menu-active");
 // });
+
+gsap.to(".nav", {
+	backgroundColor: "#000",
+	color: "#fff",
+	duration: 0.1,
+	scrollTrigger: {
+		trigger: "nav",
+		scroller: "body",
+		start: "top -3%",
+		end: "top -7%",
+		// markers:true,
+		scrub: 0.1,
+	},
+});
 
 // Landing page animation
 // GSAP animation sequence for landing page elements

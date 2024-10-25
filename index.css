@@ -7,6 +7,11 @@
   scroll-behavior: smooth;
 }
 
+*::selection{
+  background-color: #F35422;
+  color: #fff;
+}
+
 html,
 body {
   height: 100%;
@@ -24,10 +29,8 @@ a > svg {
   justify-content: center;
 }
 
-
-/* General styling for the navbar */
 /* General Navbar Styles */
-.navbar {
+/* .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +44,6 @@ a > svg {
   font-size: 24px;
 }
 
-/* Default navbar links for larger screens */
 .nav-links {
   display: flex;
   list-style: none;z-index: 10;
@@ -55,7 +57,6 @@ a > svg {
 
 }
 
-/* Mobile menu button */
 .menu-button {
   display: flex;
   height: 24px;
@@ -83,24 +84,18 @@ a > svg {
   transform-origin: bottom left;
 }
 
-/* When active, transform the bars into a cross */
 .menu-active .menu-button .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 0px); /* Add slight vertical and horizontal offset */
+  transform: rotate(45deg) translate(5px, 0px);
 }
 
 .menu-active .menu-button .bar:nth-child(2) {
-  transform: rotate(-45deg) translate(4px, 0px); /* Add slight vertical and horizontal offset */
+  transform: rotate(-45deg) translate(4px, 0px);
 }
 
-/* Optional: Hide the middle line when the menu is open */
-/* .menu-active .menu-button .bar:nth-child(2) {
+.menu-active .menu-button .bar:nth-child(2) {
   opacity: 1;
-} */
+}
 
-
-
-
-/* Responsive Styling for Mobile */
 @media (max-width: 768px) {
   .nav-links {
       display: block;
@@ -116,9 +111,8 @@ a > svg {
       transition: width 0.6s ease, opacity 0.6s ease;
   }
 
-  /* When active, smoothly transition max-height and opacity */
   .nav-links.active {
-      width: 100%;  /* Adjust based on content height */
+      width: 100%; 
       opacity: 1;
   }
 
@@ -130,10 +124,8 @@ a > svg {
   .menu-icon {
       display: flex;
   }
-}
+} */
 
-
-/* 
 .nav {
   display: flex;
   justify-content: space-between;
@@ -143,7 +135,7 @@ a > svg {
   position: fixed;
   top: 0;
   opacity: 0;
-  transform-origin: left;
+  transform-origin: top;
   transition-property: transform background-color;
   transition-duration: 0.75s, 0.5s, 0.5s;
   transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
@@ -153,8 +145,8 @@ a > svg {
 .nav > img {
   width: 8rem;
   background-color: inherit;
-} */
-/* 
+}
+
 .navMidleItems,
 .navLeftItems {
   display: flex;
@@ -177,7 +169,6 @@ a > svg {
   background-color: inherit;
 }
 
-Initially hide the ul with opacity and height 
 .navMidleItems > span > ul {
   opacity: 0;
   max-height: 0px;
@@ -188,7 +179,7 @@ Initially hide the ul with opacity and height
   padding: 0;
   width: 8rem;
   z-index: 5;
-  background-color: inherit; 
+  background-color: inherit;
 }
 .navMidleItems > span > ul > li {
   margin: 1rem 0px;
@@ -215,7 +206,9 @@ Initially hide the ul with opacity and height
   background-color: #f35422;
   border-radius: 1rem;
   color: #fff;
-} */
+}
+
+@keyframes
 
 .page1 {
   height: 95vh;
