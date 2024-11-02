@@ -1,10 +1,10 @@
-// const menuIcon = document.getElementById("menu-icon");
-// const navLinks = document.querySelector(".nav-links");
+const menuIcon = document.getElementById("menu-icon");
+const navLinks = document.querySelector(".nav-links");
 
-// menuIcon.addEventListener("click", () => {
-//     navLinks.classList.toggle("active");
-// 	document.body.classList.toggle("menu-active");
-// });
+menuIcon.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+	document.body.classList.toggle("menu-active");
+});
 
 gsap.to(".nav", {
 	backgroundColor: "#000",
