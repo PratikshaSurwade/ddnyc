@@ -1,8 +1,11 @@
 const menuIcon = document.getElementById("menu-icon");
 const navLinks = document.querySelector(".nav-links");
+const navBarr = document.querySelector(".nav");
 
 menuIcon.addEventListener("click", () => {
     navLinks.classList.toggle("active");
+	navBarr.style.backgroundColor = navBarr.style.backgroundColor === "#000" ? "#fff" : "#000";
+	navBarr.style.Color = navBarr.style.Color === "#000" ? "#fff" : "#000";
 	document.body.classList.toggle("menu-active");
 });
 
