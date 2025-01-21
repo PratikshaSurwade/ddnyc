@@ -181,6 +181,7 @@ a > svg {
   z-index: 5;
   background-color: inherit;
 }
+
 .navMidleItems > span > ul > li {
   margin: 1rem 0px;
   cursor: pointer;
